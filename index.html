@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cardápio Digital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css', v=1) }}">
+</head>
+
+<body>
+<h1>Cardápio Digital</h1>
+
+<form action="/adicionar" method="post">
+    <input type="text" name="nome" placeholder="Prato" required>
+    <input type="text" name="ingredientes" placeholder="Ingredientes" required>
+    <input type="number" step="0.01" name="preco" placeholder="Preço" required>
+    <select name="disponibilidade">
+
+        <option>Disponível</option>
+        <option>Indisponível</option>
+    </select>
+    <button>Salvar</button>
+</form>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Prato</th>
+    <th>Ingredientes</th>
+    <th>Preço</th>
+    <th>Disponibilidade</th>
+</tr>
+
+{% for prato in pratos %}
+
+<tr>
+    <td>{{ prato[0] }}</td>
+    <td>{{ prato[1] }}</td>
+    <td>{{ prato[2] }}</td>
+    <td>R$ {{ prato[3] }}</td>
+    <td>{{ prato[4] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>

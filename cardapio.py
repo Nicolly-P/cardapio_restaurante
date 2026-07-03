@@ -121,25 +121,31 @@ def buscar():
         tabela.insert("", "end", values=linha)
 
 # ---------------- TÍTULO ----------------
-ctk.CTkLabel(janela, text="CARDÁPIO DIGITAL", font=("Arial",22,"bold"), text_color="#ffd2a2")
+titulo = ctk.CTkLabel(
+    janela,
+    text="🍽️ CARDÁPIO DIGITAL",
+    font=("Arial", 28, "bold"),
+    text_color="#f6b06b"
+)
+titulo.pack(pady=(0, 10))
 # ---------------- FORMULÁRIO ----------------
 
 frame = ctk.CTkFrame(janela, fg_color="#ffefd0")
 frame.pack(padx=20, fill="x")
 
-ctk.CTkLabel(frame,text="Prato").grid(row=0,column=0,padx=10,pady=8)
+ctk.CTkLabel(frame,text="🍝 Prato").grid(row=0,column=0,padx=10,pady=8)
 nome = ctk.CTkEntry(frame,width=250, border_color="#f6b06b", fg_color="white")
 nome.grid(row=0,column=1)
 
-ctk.CTkLabel(frame,text="Ingredientes").grid(row=1,column=0,padx=10,pady=8)
+ctk.CTkLabel(frame,text="🥗 Ingredientes").grid(row=1,column=0,padx=10,pady=8)
 ingredientes = ctk.CTkEntry(frame,width=250, border_color="#f6b06b", fg_color="white")
 ingredientes.grid(row=1,column=1)
 
-ctk.CTkLabel(frame,text="Preço").grid(row=2,column=0,padx=10,pady=8)
+ctk.CTkLabel(frame,text="💰 Preço").grid(row=2,column=0,padx=10,pady=8)
 preco = ctk.CTkEntry(frame,width=150, border_color="#f6b06b", fg_color="white")
 preco.grid(row=2,column=1)
 
-ctk.CTkLabel(frame,text="Disponibilidade").grid(row=3,column=0,padx=10,pady=8)
+ctk.CTkLabel(frame,text="📦 Disponibilidade").grid(row=3,column=0,padx=10,pady=8)
 
 disponibilidade = ctk.CTkComboBox(
     frame, values=["Disponível","Indisponível"], button_color="#ffd2a2", button_hover_color="#f6b06b", border_color="#ffd2a2", text_color="#000")
@@ -150,10 +156,10 @@ disponibilidade.set("Disponível")
 botoes = ctk.CTkFrame(janela, fg_color="#ffefd0")
 botoes.pack(pady=15)
 
-ctk.CTkButton(botoes,text="Salvar",command=salvar, fg_color="#ffd2a2", hover_color="#f6b06b", text_color="#000").grid(row=0,column=0,padx=5)
-ctk.CTkButton(botoes,text="Atualizar",command=atualizar, fg_color="#ffd2a2", hover_color="#f6b06b", text_color="#000").grid(row=0,column=1,padx=5)
-ctk.CTkButton(botoes,text="Excluir",command=excluir, fg_color="#ffd2a2", hover_color="#f6b06b", text_color="#000").grid(row=0,column=2,padx=5)
-ctk.CTkButton(botoes,text="Limpar",command=limpar, fg_color="#ffd2a2", hover_color="#f6b06b", text_color="#000").grid(row=0,column=3,padx=5)
+ctk.CTkButton(botoes,text="💾 Salvar",command=salvar, fg_color="#ffd2a2", hover_color="#f6b06b", text_color="#000").grid(row=0,column=0,padx=5)
+ctk.CTkButton(botoes,text="✏️ Atualizar",command=atualizar, fg_color="#ffd2a2", hover_color="#f6b06b", text_color="#000").grid(row=0,column=1,padx=5)
+ctk.CTkButton(botoes,text="🗑️ Excluir",command=excluir, fg_color="#ffd2a2", hover_color="#f6b06b", text_color="#000").grid(row=0,column=2,padx=5)
+ctk.CTkButton(botoes,text="🧹 Limpar",command=limpar, fg_color="#ffd2a2", hover_color="#f6b06b", text_color="#000").grid(row=0,column=3,padx=5)
 # ---------------- BUSCA ----------------
 
 busca = ctk.CTkFrame(janela,fg_color="#ffefd0")
@@ -162,8 +168,8 @@ busca.pack(fill="x",padx=20)
 pesquisa = ctk.CTkEntry(busca,width=250,placeholder_text="Buscar prato")
 pesquisa.grid(row=0,column=0,padx=10,pady=10)
 
-ctk.CTkButton(busca,text="Buscar",command=buscar, fg_color="#ffd2a2", hover_color="#f6b06b", text_color="#000").grid(row=0,column=1,padx=5)
-ctk.CTkButton(busca,text="Mostrar Todos",command=mostrar, fg_color="#ffd2a2", hover_color="#f6b06b", text_color="#000").grid(row=0,column=2,padx=5)
+ctk.CTkButton(busca,text="🔍 Buscar",command=buscar, fg_color="#ffd2a2", hover_color="#f6b06b", text_color="#000").grid(row=0,column=1,padx=5)
+ctk.CTkButton(busca,text="📋 Mostrar Todos",command=mostrar, fg_color="#ffd2a2", hover_color="#f6b06b", text_color="#000").grid(row=0,column=2,padx=5)
 
 # ---------------- TABELA ----------------
 colunas = ("ID","Prato","Ingredientes","Preço","Disponibilidade")
